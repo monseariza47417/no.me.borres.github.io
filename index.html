@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arte Digital - No Me Borres</title>
+
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+/* FONDO ANIMADO */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(120deg, #f2c94c, #f2994a, #2d9cdb, #56ccf2);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* TITULO */
+header {
+  text-align: center;
+  padding: 2rem 1rem 3rem 1rem;
+  color: #fff;
+}
+
+header h1 {
+  font-family: 'Kastroo', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+}
+
+header h2 {
+  font-family: 'Kastroo', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* CARRUSEL */
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding-left: 50%;
+  padding-right: 50%;
+}
+
+.carousel::-webkit-scrollbar { display: none; }
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 400px;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.carousel-item img, .carousel-item video {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+}
+
+.carousel-item video {
+  pointer-events: none;
+}
+
+/* VIDEO ITEM Y TEXTO */
+.video-item {
+  position: relative;
+}
+
+.error-caption {
+  position: absolute;
+  bottom: 25%; /* debajo del centro */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: rgba(170,255,170,0.7); /* verde digital tenue */
+  white-space: nowrap;
+  opacity: 1;
+  pointer-events: none;
+  animation: floatingText 4s linear infinite alternate;
+}
+
+@keyframes floatingText {
+  0% { transform: translateX(-50%) translateY(0); opacity: 0.8; }
+  50% { transform: translateX(-50%) translateY(-3px); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(3px); opacity: 0.8; }
+}
+
+/* BOTONES LATERALES */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 6px;
+}
+
+.btn-left { left: 10px; }
+.btn-right { right: 10px; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Arte Digital</h1>
+  <h2>No Me Borres</h2>
+  <p style="color:white; opacity:0.7;">Galería artística y portafolio de M. Monserrat Ariza</p>
+</header>
+
+<div class="carousel-wrapper">
+  <button class="btn btn-left">&#8249;</button>
+  <div class="carousel" id="carousel">
+
+    <div class="carousel-item"><img src="https://picsum.photos/id/1011/800/600" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-khanh-le-207985-666839-17Y6T.jpg" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-pixabay-413960-LhED1.jpg" alt=""></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1043/800/600" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-hikaique-290617-dImRb.jpg" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-pixabay-33044-lLLvj.jpg" alt=""></div>
+
+    <!-- VIDEO -->
+    <div class="carousel-item video-item">
+      <video src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/videos/1172092-hd_1920_1080_30fps1-qSCii.mp4" muted loop></video>
+      <div class="error-caption">me siento viva</div>
+    </div>
+
+    <div class="carousel-item"><img src="https://picsum.photos/id/1070/800/600" alt=""></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1080/800/600" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-helenalopes-9124694-sOXgL.jpg" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-prsrafa-943150-SFYTj.jpg" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-maxandrey-1207732-vQCwZ.jpg" alt=""></div>
+    <div class="carousel-item"><img src="https://cdn.cmsfly.com/690b9a33ba14fb003a6045da/images/pexels-life-of-pix-3540-hKw9N.jpg" alt=""></div>
+
+  </div>
+  <button class="btn btn-right">&#8250;</button>
+</div>
+
+<script>
+const carousel = document.getElementById('carousel');
+const items = document.querySelectorAll('.carousel-item');
+const btnLeft = document.querySelector('.btn-left');
+const btnRight = document.querySelector('.btn-right');
+let isDown = false;
+let startX, scrollLeft;
+
+// DRAG
+carousel.addEventListener('mousedown', e => {
+  isDown = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+carousel.addEventListener('mouseleave', () => isDown = false);
+carousel.addEventListener('mouseup', () => isDown = false);
+carousel.addEventListener('mousemove', e => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  carousel.scrollLeft = scrollLeft - (x - startX);
+});
+
+// TOUCH
+carousel.addEventListener('touchstart', e => {
+  isDown = true;
+  startX = e.touches[0].pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+carousel.addEventListener('touchend', () => isDown = false);
+carousel.addEventListener('touchmove', e => {
+  if(!isDown) return;
+  const x = e.touches[0].pageX - carousel.offsetLeft;
+  carousel.scrollLeft = scrollLeft - (x - startX);
+});
+
+// SCALE
+function updateCenter() {
+  const carouselRect = carousel.getBoundingClientRect();
+  const centerX = carouselRect.left + carouselRect.width/2;
+
+  items.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    const itemCenter = rect.left + rect.width/2;
+    const distance = Math.abs(centerX - itemCenter);
+
+    const scale = Math.max(0.7, 1 - distance / (carouselRect.width * 0.8));
+    const opacity = Math.max(0.5, 1 - distance / (carouselRect.width * 0.5));
+
+    item.style.transform = `scale(${scale})`;
+    item.style.opacity = opacity;
+
+    const video = item.querySelector('video');
+    if(video){
+      if(scale > 0.95) video.play();
+      else video.pause();
+    }
+  });
+}
+
+carousel.addEventListener('scroll', updateCenter);
+window.addEventListener('resize', updateCenter);
+
+// BOTONES
+const scrollStep = 420;
+btnLeft.addEventListener('click', () => {
+  carousel.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+});
+btnRight.addEventListener('click', () => {
+  carousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+});
+
+// Inicial
+updateCenter();
+</script>
+</body>
+</html>
