@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.error-caption {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px; /* muy pequeña */
+  color: rgba(255,255,255,0.7); /* verde digital tenue */
+  white-space: nowrap;
+  opacity: 1;
+  pointer-events: none;
+  animation: floatingText 4s linear infinite alternate;
+}
+
+@keyframes floatingText {
+  0% { transform: translateX(-50%) translateY(0); }
+  25% { transform: translateX(-50%) translateY(-2px); }
+  50% { transform: translateX(-50%) translateY(1px); }
+  75% { transform: translateX(-50%) translateY(-1px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
